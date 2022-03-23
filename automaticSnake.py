@@ -12,7 +12,7 @@ def LC_move():
 
     # This strategy wants to move vertical first
     dy = ymeal - yhead
-    if dy == 0:
+    if 0 == dy:
         pass
     elif dy > 0:
         return "down"
@@ -20,7 +20,7 @@ def LC_move():
         return "up"
     
     dx = xmeal - xhead
-    if dx == 0:
+    if 0 == dx:
         raise ValueError("Snake already at meal position")
     elif dx > 0:
         return "right"
