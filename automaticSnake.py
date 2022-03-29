@@ -4,11 +4,15 @@
 # analogue: CL is Col-Line, first horizontal then vertical
 
 def LC_move(): 
-    """returns next move in the LC strategy. As a string left/right/up/down."""
+    """returns next move in the LC strategy. 
+    As a string left/right/up/down.
+    """
     from snake import get_headcoord
     from meal import get_mealcoord
     xhead,yhead = get_headcoord()
     xmeal,ymeal = get_mealcoord()
+
+    # test
 
     # This strategy wants to move vertical first
     dy = ymeal - yhead
