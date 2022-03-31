@@ -93,7 +93,6 @@ def CL_move():
         return "up"
 
 def CL_path_is_free():
-
     """True if the simple CL path has no occupied spaces"""
     
     path = []

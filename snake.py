@@ -53,6 +53,7 @@ headcoord = (3,3)
 def get_headcoord():
     global headcoord
     return headcoord
+
 # tail is reversed, last position of the snake comes first. 
 tail = [(3,2)]
 
@@ -70,13 +71,13 @@ def tick():
     
     # move snake
     headx, heady = headcoord
-    if current_direction == 0: #left
+    if current_direction == 0:  # left
         headx = headx-1
-    elif current_direction == 2: #right
+    elif current_direction == 2:  # right
         headx = headx+1
-    elif current_direction == 1: #up
+    elif current_direction == 1:  # up
         heady = heady-1
-    elif current_direction == 3: #down
+    elif current_direction == 3:  # down
         heady = heady+1
     else:
         raise ValueError("internal direction var is broken!")
