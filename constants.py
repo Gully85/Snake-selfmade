@@ -1,6 +1,7 @@
 # holds all constants for the snake game
 
 from typing import Tuple
+
 # max iterations of the main loop per second
 FPS_max = 30
 
@@ -19,14 +20,14 @@ screensize_y = 500
 screensize = (screensize_x, screensize_y)
 
 # background color in rgb
-backgroundcolor = (210,210,210) # light grey
+backgroundcolor = (210, 210, 210)  # light grey
 
 # snake color (head/tail)
-snakeheadcolor = (215,48,31) # orange
-snaketailcolor = (252,141,89)  # pale orange
+snakeheadcolor = (215, 48, 31)  # orange
+snaketailcolor = (252, 141, 89)  # pale orange
 
 # meal color
-mealcolor = (44,162,95) # dark green
+mealcolor = (44, 162, 95)  # dark green
 
 # size of the playfield in px. Should not differ from screensize unless an indicator for
 # the playable area is added.
@@ -47,5 +48,6 @@ def pixelcoord_in_playfield(playfield_coords: Tuple[int]):
     px_x = tilesize_x * playfield_x
     px_y = tilesize_y * playfield_y
     return (px_x, px_y)
+
 
 #### do change
