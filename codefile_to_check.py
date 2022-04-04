@@ -40,8 +40,8 @@ def very_long_name_that_requires_an_immediate_linebreak(
     """the docstring is fine, has a,b,c"""
     return True
 
-def complicated_types(a: int, b: Tuple[float, float]
-) -> Tuple[int,
-           Tuple[int, int]]:
+def complicated_types(a: int,
+                      b: Tuple[float, Tuple[int, float]]
+) -> Tuple[int, float]:
     """the docstring does not contain the second parameter"""
     return True
