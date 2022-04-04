@@ -3,12 +3,14 @@
 # LC stands for Line-Column. The strategy of going vertical until correct line, then horizontal until correct column
 # analogue: CL is Col-Line, first horizontal then vertical
 
+
 def LC_move():
-    """returns next move in the LC strategy. 
+    """returns next move in the LC strategy.
     As a string left/right/up/down.
     """
     from snake import get_headcoord
     from meal import get_mealcoord
+
     xhead, yhead = get_headcoord()
     xmeal, ymeal = get_mealcoord()
 
@@ -31,12 +33,14 @@ def LC_move():
     else:
         return "left"
 
+
 def LC_path_is_free():
     """True if the simple LC path has no occupied spaces"""
 
     path = []
     from snake import get_headcoord
     from meal import get_mealcoord
+
     xhead, yhead = get_headcoord()
     xmeal, ymeal = get_mealcoord()
 
@@ -63,15 +67,18 @@ def LC_path_is_free():
             path.append((x, ymeal))
 
     from snake import occupies_tile
+
     for coords in path:
         if occupies_tile(coords):
             return False
 
     return True
 
+
 def CL_move():
     from snake import get_headcoord
     from meal import get_mealcoord
+
     xhead, yhead = get_headcoord()
     xmeal, ymeal = get_mealcoord()
 
@@ -92,12 +99,14 @@ def CL_move():
     else:
         return "up"
 
+
 def CL_path_is_free():
     """True if the simple CL path has no occupied spaces"""
 
     path = []
     from snake import get_headcoord
     from meal import get_mealcoord
+
     xhead, yhead = get_headcoord()
     xmeal, ymeal = get_mealcoord()
 
@@ -124,10 +133,12 @@ def CL_path_is_free():
             path.append((xmeal, y))
 
     from snake import occupies_tile
+
     for coords in path:
         if occupies_tile(coords):
             return False
 
     return True
+
 
 # TODO detect suicide-move, generate random non-suicide move

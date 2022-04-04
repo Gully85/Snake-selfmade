@@ -3,16 +3,14 @@
 # use the pygame module
 import pygame
 from automaticSnake import CL_move
-
 pygame.init()
 
 import constants
-
 FPS_max = constants.FPS_max
 
 import snake, meal
 
-# limits the number of iterations per second. Call FrameLimiter.tick(fps: int) to wait
+# limits the number of iterations per second. Call FrameLimiter.tick(fps: int) to wait 
 # until the last call is 1/fps seconds ago
 FrameLimiter = pygame.time.Clock()
 
@@ -24,11 +22,11 @@ def main():
     background = pygame.Surface(screensize_px)
     background.convert()
     background.fill(constants.backgroundcolor)
-
+    
     # move background to the screen. Sizes are already matching
-    screen.blit(background, (0, 0))
+    screen.blit(background, (0,0))
 
-    # reveal
+    #reveal
     pygame.display.flip()
 
     # main Event Loop
@@ -46,9 +44,9 @@ def main():
             snake.set_direction(automaticSnake.LC_move())
         elif automaticSnake.CL_path_is_free():
             snake.set_direction(automaticSnake.CL_move())
-        # TODO more fall-back strategies here. Currently, if CL and LC strategies are blocked, this will
+        # TODO more fall-back strategies here. Currently, if CL and LC strategies are blocked, this will 
         # just move forward until one becomes unblocked or the game is lost
-
+        
         if snake.get_pause_state():
             continue
 
@@ -60,25 +58,16 @@ def main():
             exit()
 
         # draw new state
-        screen.blit(background, (0, 0))
+        screen.blit(background, (0,0))
         snake.draw(screen)
         meal.draw(screen)
         pygame.display.flip()
 
-
+    
 def process_user_input():
-    """Looks through the event-Queue, hands accepted
+    """Looks through the event-Queue, hands accepted 
     inputs (left/right/up/down/p) over to the snake module"""
-    from pygame.locals import (
-        QUIT,
-        KEYDOWN,
-        K_LEFT,
-        K_RIGHT,
-        K_UP,
-        K_DOWN,
-        K_ESCAPE,
-        K_p,
-    )
+    from pygame.locals import QUIT, KEYDOWN, K_LEFT, K_RIGHT, K_UP, K_DOWN, K_ESCAPE, K_p
 
     # pygame has an event-queue, all inputs are KEYDOWN events in that.
     for event in pygame.event.get():
@@ -86,7 +75,7 @@ def process_user_input():
         # end process when game window is closed
         if event.type == QUIT:
             exit()
-
+        
         # accepted user inputs: Esc left right top down P. Others are ignored.
         if event.type == KEYDOWN:
             if event.key == K_ESCAPE:
@@ -104,5 +93,4 @@ def process_user_input():
 
 
 # execute main if this is the file called, not just imported
-if __name__ == "__main__":
-    main()
+if __name__ == "__main__": main()
