@@ -1,0 +1,19 @@
+Notes
+
+The pygame module is not compatible with Python 3.8 and higher, have to use 3.7 unfortunately.
+
+
+TODOs:
+- meal should generate only positions outside the current snake. Just re-roll many times should be ok.
+- re-draw only if something changed since last draw
+- call Auto-mover checks only if the snake moved, not every frame
+
+Auto-Mover TODOs:
+- check for suicide moves
+- create random non-suicide move
+- the same with bias: towards nearest wall, then follow the wall? away from areas with many occupied spaces?
+- systematic fall-back strategy: Run towards a wall, follow the wall. If LC or CL becomes available, use that.
+
+
+Open Questions:
+- should the snake accept horizontal input if already moving horizontally? Same for vertically?
